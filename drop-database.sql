@@ -1,2 +1,5 @@
-DROP DATABASE HatShop;
-/*DROP DATABASE completely detele the database, use it safely*/
+use pet_shop;
+CREATE TABLE catChamber (
+ name VARCHAR(50),
+ age INT
+)
