@@ -18,9 +18,30 @@
 -- USE pet_shop;
 -- show TABLES;
 
-INSERT INTO cow(name, age) VALUES("BIBLOO", 20); 
+-- INSERT INTO cow(name, age) VALUES("BIBLOO", 20); 
 
-SELECT * FROM cow;
--- SELECT name FROM cow; 
-DESC cow
+-- SELECT * FROM cow;
+-- -- SELECT name FROM cow; 
+-- DESC cow
+
+/*EXPLORING QUOTES*/ 
+-- INSERT INTO shop(age, name) VALUES(15, 'moyota\'s shop');
+-- select * FROM shop;
+
+/*ADDING DEFAULT VALUES*/
+-- CREATE TABLE dominax(name VARCHAR(20), flavor VARCHAR(10));
+-- SHOW TABLES;
+
+/*DEFAULT VALUE WITH NOT NULL*/
+
+CREATE TABLE hawlinks(
+name VARCHAR(20) NOT NULL DEFAULT 'UNNAMED',
+capicity INT NOT NULL DEFAULT );
+-- INSERT INTO dominax() VALUES();
+
+INSERT INTO hawlinks(name, capicity) VALUES('cooker1', 2);
+SELECT * FROM hawlinks;
+
+
+ 
 
