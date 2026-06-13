@@ -28,12 +28,41 @@
 
 -- no need to provide ID mannualy - when we have AUTO_INCREMENT IN TABLE FOR cat_Id
 
-INSERT INTO uniqueCats(name) VALUES("Avioatroi");
-INSERT INTO uniqueCats(name) VALUES("Avioatroi");
-INSERT INTO uniqueCats(name) VALUES("Avioatroi");
-INSERT INTO uniqueCats(name) VALUES("Avioatroi");
-INSERT INTO uniqueCats(name) VALUES("Avioatroi");
-INSERT INTO uniqueCats( name) VALUES( "gaoiya");
+-- INSERT INTO uniqueCats(name) VALUES("Avioatroi");
+-- INSERT INTO uniqueCats(name) VALUES("Avioatroi");
+-- INSERT INTO uniqueCats(name) VALUES("Avioatroi");
+-- INSERT INTO uniqueCats(name) VALUES("Avioatroi");
+-- INSERT INTO uniqueCats(name) VALUES("Avioatroi");
+-- INSERT INTO uniqueCats( name) VALUES( "gaoiya");
 
 
-select * from uniqueCats;
+-- select * from uniqueCats;
+
+/*TABLE EXERCISE*/
+
+-- create DATABASE peoples;
+
+-- USE peoples;
+
+-- CREATE TABLE employees(
+--  id INT AUTO_INCREMENT,
+--  firstName VARCHAR(33) NOT NULL,
+--  middleName VARCHAR(33),
+--  lastName VARCHAR(34) NOT NULL,
+--  age INT NOT NULL,
+--  current_status VARCHAR(200) NOT NULL DEFAULT "employed",
+--  PRIMARY KEY(id)
+-- );
+
+INSERT INTO employees(firstname,
+ lastname, age)
+			values("Aviox",
+ "docisk", 15
+  ), ("Aviox",
+ "docisk", 15
+  ),("Aviox",
+ "docisk", 15
+  );
+
+
+
