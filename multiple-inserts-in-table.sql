@@ -34,12 +34,12 @@
 
 /*DEFAULT VALUE WITH NOT NULL*/
 
-CREATE TABLE hawlinks(
-name VARCHAR(20) NOT NULL DEFAULT 'UNNAMED',
-capicity INT NOT NULL DEFAULT );
+-- CREATE TABLE hawlinks(
+-- name VARCHAR(20) NOT NULL DEFAULT 'UNNAMED',
+-- capicity INT NOT NULL DEFAULT 0);
 -- INSERT INTO dominax() VALUES();
 
-INSERT INTO hawlinks(name, capicity) VALUES('cooker1', 2);
+INSERT INTO hawlinks() VALUES();
 SELECT * FROM hawlinks;
 
 
