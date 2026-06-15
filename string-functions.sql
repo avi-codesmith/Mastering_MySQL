@@ -83,9 +83,17 @@ SELECT
 FROM
     books;
     
-/* REVERSE - just reverse string +_-'*/
+/* REVERSE - just reverse string -_-*/
 
 SELECT REVERSE("RAW = WAR"); /* WWE :o */
 SELECT REVERSE("null"); /* results null of course*/
+SELECT CONCAT(author_fname,'-', REVERSE(author_fname)) FROM books;
 
-SELECT CONCAT(author_fname, REVERSE(author_fname)) FROM books;
+/*CHAR_LENGTH - tell character length wow! nice*/
+/* LENGTH - tell word lenght in bytes +_+' */
+
+SELECT CHAR_LENGTH("123456789");
+SELECT CHAR_LENGTH("AVI DIXIT"); /*INCLUDE WHITE SPACE AS WELL AS BEFORE*/
+
+
+SELECT LENGTH("冰淇淋") /* SHOULD BE 3? BUT IT IS NOT CHARRECTER'S LENGTH, IT'S HOW MUCH SPACE IT TAKES IN BYTES 
