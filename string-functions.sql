@@ -83,6 +83,8 @@ SELECT
 FROM
     books;
     
+/*STRAIGHT FORWARD ONES*/    
+    
 /* REVERSE - just reverse string -_-*/
 
 SELECT REVERSE("RAW = WAR"); /* WWE :o */
@@ -106,12 +108,12 @@ SELECT
 FROM
     books;
     
-/*LOWER = LCASE AND UPPER = UCASE*/
+/*LOWER = LCASE AND UPPER = UCASE :D*/
 
 SELECT LOWER("HELLO"); -- hello
-SELECT UPPER("hello") -- HELLO
-SELECT UPPER("hello") -- HELLO
-SELECT UPPER("hello") -- HELLO
+SELECT UPPER('hello'); -- HELLO
+SELECT UCASE("hello"); -- HELLO
+SELECT LCASE("HELLO"); -- hello
 
 
     
