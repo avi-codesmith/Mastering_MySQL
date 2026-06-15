@@ -115,5 +115,11 @@ SELECT UPPER('hello'); -- HELLO
 SELECT UCASE("hello"); -- HELLO
 SELECT LCASE("HELLO"); -- hello
 
+/*real world usage*/
 
-    
+SELECT CONCAT("GO BACK", " ", UCASE(author_fname), "!!!") FROM books;
+
+/*INSERT - insert something more accurately*/
+
+-- SELECT INSERT("STRING", STARTING_POINT_FOR_CHANGE, "STARTING_POINT_FOR_KILL_THE_CHARS", "ALTERNATIVE_CHARS")
+SELECT INSERT("HELLO BROCK", 6, 0, " THERE,")
