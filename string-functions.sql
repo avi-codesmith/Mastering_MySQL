@@ -94,6 +94,16 @@ SELECT CONCAT(author_fname,'-', REVERSE(author_fname)) FROM books;
 
 SELECT CHAR_LENGTH("123456789");
 SELECT CHAR_LENGTH("AVI DIXIT"); /*INCLUDE WHITE SPACE AS WELL AS BEFORE*/
+SELECT CHAR_LENGTH("冰淇淋"); -- 3, just 3 letters
 
+SELECT LENGTH("ABC"); -- 3, one letter one byte
+SELECT LENGTH("冰淇淋"); -- 9, one letter 3 byte 
 
-SELECT LENGTH("冰淇淋") /* SHOULD BE 3? BUT IT IS NOT CHARRECTER'S LENGTH, IT'S HOW MUCH SPACE IT TAKES IN BYTES 
+-- real world usage
+
+SELECT 
+    CHAR_LENGTH(title),
+    CONCAT(    SUBSTR(title, 1, 15)
+, "...")
+FROM
+    books;
