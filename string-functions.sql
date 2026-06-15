@@ -51,4 +51,11 @@ SELECT SUBSTRING("HELLO WORLD", -1, 2); -- negative value starts backwords
 /*REAL WORLD USAGE*/
 -- SUBSTRING === SUBSTR (NO DIFFERNCE)
 SELECT SUBSTR(author_fname, 1, 1) AS AVATAR, author_fname FROM books;
+
+/*COMBINING BOTH THE SUBSTR AND CONCAT*/
+
+SELECT CONCAT("By", " ", author_fname, "-") AS Author_Name,
+       CONCAT(SUBSTR(title, 1,10), "...") AS Short_Title FROM books;
+       
+SELECT SUBSTR(author_fname, 1,1)
  
