@@ -68,6 +68,12 @@ SELECT
             '.') AS AUTHORS
 FROM
     books;
+    
+    
+/*INSERT - insert something more accurately*/
+
+-- SELECT INSERT("STRING", STARTING_POINT_FOR_CHANGE, "STARTING_POINT_FOR_KILL_THE_CHARS", "ALTERNATIVE_CHARS")
+SELECT INSERT("HELLO BROCK", 6, 0, " THERE,");
 
 /*REPLACE - replace the part of the string :o*/
 
@@ -119,7 +125,25 @@ SELECT LCASE("HELLO"); -- hello
 
 SELECT CONCAT("GO BACK", " ", UCASE(author_fname), "!!!") FROM books;
 
-/*INSERT - insert something more accurately*/
+/*LEFT AND RIGHT - get characters from left and right*/
 
--- SELECT INSERT("STRING", STARTING_POINT_FOR_CHANGE, "STARTING_POINT_FOR_KILL_THE_CHARS", "ALTERNATIVE_CHARS")
-SELECT INSERT("HELLO BROCK", 6, 0, " THERE,")
+SELECT LEFT("1234567", 3); -- 123
+SELECT RIGHT("987654321", 3); -- 321
+SELECT LEFT(author_fname, 1) FROM books; -- first name
+
+/*REPEAT - JUST REPEAT :D*/
+
+SELECT REPEAT("HA", 4); -- HAHAHAHA
+SELECT CONCAT(REPEAT("HA", 4), "!");
+
+/*TRIM - CUT STRINGS*/
+-- This function cannot replace the in between gaps of the characters
+
+SELECT TRIM(" SSS "); -- remove spaces from right and left -SSS
+SELECT TRIM("S S S"); -- remove spaces from right and left not in b/w -S S S
+SELECT TRIM(LEADING  " " FROM "   S S S"); -- remove leading " " characters -S S S
+SELECT TRIM(TRAILING " " FROM "S S S   "); -- remove trailing " " characters -S S S
+SELECT TRIM(BOTH " " FROM "   S S S   "); -- remove from both leading and trailing -S S S
+
+-- 142 === 146
+-- using trim lonely and using it with BOTH keyword results same!
