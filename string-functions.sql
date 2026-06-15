@@ -108,7 +108,10 @@ FROM
     
 /*LOWER = LCASE AND UPPER = UCASE*/
 
-SELECT LOWER("HELLO") -- hello
-SELECT LOWER("HELLO") -- hello
+SELECT LOWER("HELLO"); -- hello
+SELECT UPPER("hello") -- HELLO
+SELECT UPPER("hello") -- HELLO
+SELECT UPPER("hello") -- HELLO
+
 
     
