@@ -102,8 +102,13 @@ SELECT LENGTH("冰淇淋"); -- 9, one letter 3 byte
 -- real world usage
 
 SELECT 
-    CHAR_LENGTH(title),
-    CONCAT(    SUBSTR(title, 1, 15)
-, "...")
+    CHAR_LENGTH(title), CONCAT(SUBSTR(title, 1, 15), '...')
 FROM
     books;
+    
+/*LOWER = LCASE AND UPPER = UCASE*/
+
+SELECT LOWER("HELLO") -- hello
+SELECT LOWER("HELLO") -- hello
+
+    
