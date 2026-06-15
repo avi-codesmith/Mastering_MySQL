@@ -1,5 +1,7 @@
 /*String functions*/
 
+-- Can be used along with :-);
+
 CREATE DATABASE book_shop;
 USE book_shop;
 
@@ -54,8 +56,36 @@ SELECT SUBSTR(author_fname, 1, 1) AS AVATAR, author_fname FROM books;
 
 /*COMBINING BOTH THE SUBSTR AND CONCAT*/
 
-SELECT CONCAT("By", " ", author_fname, "-") AS Author_Name,
-       CONCAT(SUBSTR(title, 1,10), "...") AS Short_Title FROM books;
+SELECT 
+    CONCAT('By', ' ', author_fname, '-') AS Author_Name,
+    CONCAT(SUBSTR(title, 1, 10), '...') AS Short_Title
+FROM books;
        
-SELECT SUBSTR(author_fname, 1,1)
- 
+SELECT 
+    CONCAT(SUBSTR(author_fname, 1, 1),
+            '.',
+            SUBSTR(author_lname, 1, 1),
+            '.') AS AUTHORS
+FROM
+    books;
+
+/*REPLACE - replace the part of the string :o*/
+
+-- It is are case sensitive
+-- All fields are mandetory to fill
+
+SELECT 
+    CONCAT(REPLACE(title, ' ', '-'),
+            '-',
+            REPLACE(author_fname, ' ', '-'),
+            '-',
+            author_lname) AS path
+FROM
+    books;
+    
+/* REVERSE - just reverse string +_-'*/
+
+SELECT REVERSE("RAW = WAR"); /* WWE :o */
+SELECT REVERSE("null"); /* results null of course*/
+
+SELECT CONCAT(author_fname, REVERSE(author_fname)) FROM books;
