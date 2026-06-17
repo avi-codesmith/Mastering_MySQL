@@ -87,3 +87,22 @@ SELECT title, released_year FROM books ORDER BY released_year DESC LIMIT 18, 222
 -- not a problem :)
 -- it will print only 2
 -- noo errors! :D
+
+/*LIKE KEYWORD - SEARCH */
+
+-- LIKE - smart search, most likely search
+-- case free, no matter upper or lower
+-- % = zero or more characters
+
+SELECT DISTINCT author_fname FROM books WHERE author_fname LIKE '%dAv%'; -- retrun David
+
+SELECT author_fname FROM books WHERE author_fname LIKE '%DA%'; -- Dave, David..., Freida
+-- just any where da the the row prints...as in line no.93
+
+SELECT author_fname FROM books WHERE author_fname LIKE "Da%"; -- Dave, David..., 
+-- no Freida (here, words are before da)
+-- David, Dan... (here, words are after da) as we said da%
+
+SELECT author_fname FROM books WHERE author_fname LIKE "%dA"; -- Freida
+-- no David, Dan... this time (here words after da)
+-- Freida its here (here words before da) as we said %DA
