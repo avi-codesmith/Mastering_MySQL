@@ -93,6 +93,9 @@ SELECT title, released_year FROM books ORDER BY released_year DESC LIMIT 18, 222
 -- LIKE - smart search, most likely search
 -- case free, no matter upper or lower
 -- % = zero or more characters
+-- _ = one character space like games where : D_RAE_ON = DORAEMON :D - (_ === ONLY ONE CHARACTER SPACE) = quiz for sql ;D
+-- these %,_ are known as wildcard characters in sql
+-- wildcard = not fixed like joker in a card game may become king, or anything stupid +_-'
 
 SELECT DISTINCT author_fname FROM books WHERE author_fname LIKE '%dAv%'; -- retrun David
 
@@ -106,3 +109,32 @@ SELECT author_fname FROM books WHERE author_fname LIKE "Da%"; -- Dave, David...,
 SELECT author_fname FROM books WHERE author_fname LIKE "%dA"; -- Freida
 -- no David, Dan... this time (here words after da)
 -- Freida its here (here words before da) as we said %DA
+
+-- LIKE practise
+
+SELECT * FROM books WHERE title LIKE "%:%";
+
+# LIKE with _ underscores 
+
+SELECT * FROM books WHERE author_fname LIKE "____"; -- = exactly four character, quiz for mysql 
+-- neil, dave, jhon,... 
+
+SELECT * FROM books WHERE author_fName LIKE "J__n"; -- case free, no matters upper ot lower
+
+-- BRAIN OUT
+
+SELECT * FROM books WHERE author_fname LIKE "%"; -- mean = which have zero or more chars
+-- it will print every string, ofcourse NULL will not print here
+-- NULL won't print here!!!
+
+-- Q. find all author's fname which includes letter "A".
+
+SELECT author_fname FROM books WHERE author_fname LIKE "%a%";
+
+# Extracting wildcards characters - %, _
+ 
+-- SELECT title FROM books WHERE title LIKE "%_%"; -- ERROR WRONG SYNTAX
+-- :(, sloution :) add \ backslash before
+SELECT title from books WHERE title LIKE "%\_%";  -- fake_book :D
+-- same for extracting - %
+SELECT title FROM books WHERE title LIKE "%\%%"; -- 10% Happier :| -> :) -> :D
