@@ -33,3 +33,19 @@ SELECT released_year, COUNT(*) AS books_released FROM books GROUP BY released_ye
 
 -- selection and grouping column should be same!!!!!!!
 
+/*MIN MAX*/
+-- In strings - use alphabetical order :D
+
+SELECT MAX(author_fname), MIN(author_fname) FROM books; 
+SELECT MIN(author_lname) FROM books;
+
+# Subqueries
+
+SELECT title, pages 
+FROM books
+WHERE pages = (SELECT MAX(pages) FROM books);
+
+select title, released_year FROM books WHERE released_year = (SELECT MAX(released_year) FROM books);-- newest book
+select title, released_year FROM books WHERE released_year = (SELECT MIN(released_year) FROM books);-- oldest book
+
+
