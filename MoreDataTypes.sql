@@ -1,0 +1,66 @@
+/*CHAR AND VARCHAR*/
+
+CREATE TABLE employees_table (name VARCHAR(10));
+DESC employees_table;
+INSERT INTO employees_table(name) VALUES('pppppp');
+SELECT * FROM employees_table;
+
+CREATE TABLE friends (name CHAR(10));
+DESC friends;
+INSERT INTO friends(name) VALUES('pppppp');
+SELECT * FROM friends;
+
+-- results VARCHAR AND CHAR result same but:
+-- if we add lesse characters in CHAR column then:
+-- behind the scenes: CHAR include white space to fulfill the demanded amount
+-- It results same though but takes more space
+
+/*
+CHAR(4) vs VARCHAR(4)
+
+Value      | CHAR(4) Stored | Storage | VARCHAR(4) Stored | Storage
+-----------|----------------|---------|-------------------|--------
+''         | '    '         | 4 bytes | ''                | 1 byte
+'ab'       | 'ab  '         | 4 bytes | 'ab'              | 3 bytes
+'abcd'     | 'abcd'         | 4 bytes | 'abcd'            | 5 bytes
+
+Notes:
+- CHAR(4) is fixed-length and always uses 4 bytes.
+- CHAR pads unused space with trailing spaces.
+- VARCHAR(4) is variable-length.
+- VARCHAR uses actual data length + 1 byte to store length information.
+*/
+
+/*ALL ABOUT INT*/
+
+-- TINYINT 
+-- SMALLINT 
+-- MEDIUMINT
+-- INT 
+-- BIGINT
+
+# SIGNED AND UNSIGNED
+
+-- unsigned = without (-) only positive
+-- signed = with (-) either + or -
+
+CREATE TABLE parents(children INT UNSIGNED); -- by default it is SIGNED with - and + 
+-- children can't be negative - UNSIGNED would be best here :)
+INSERT INTO parents(children) values(222); -- ok! :)
+INSERT INTO parents(children) values(-222); -- !ok +_-' error -_-'
+
+# DECIMALS
+
+-- DECIMAL(5,2) upto 5 total digits, add point after two digit backwards
+
+CREATE table products(price DECIMAL(10, 2));
+
+INSERT INTO products(price) VALUES(10.55); -- 10.55
+INSERT INTO products(price) VALUES(1044); -- 1044.00
+INSERT INTO products(price) VALUES('ddddddd'); -- error string
+INSERT INTO products(price) VALUES(111.2222); -- 111.22 only two char after ".", with warning result is 111.22 - value will truncate
+INSERT INTO products(price) VALUES(11111122222222222222.11); -- error out of range! 
+ 
+
+SELECT * FROM products;
+
