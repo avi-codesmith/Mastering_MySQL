@@ -9,5 +9,3 @@ CREATE DATABASE MobileID
 USE soapShop
 SELECT DATABASE();
 /*We can just double click to any database to use*/
-
-

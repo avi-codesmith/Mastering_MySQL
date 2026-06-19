@@ -1,4 +1,6 @@
 /*String functions*/
+-- CONCAT
+-- SUBSTRING
 
 -- Can be used along with :-);
 
@@ -77,7 +79,7 @@ SELECT INSERT("HELLO BROCK", 6, 0, " THERE,");
 
 /*REPLACE - replace the part of the string :o*/
 
--- It is are case sensitive
+-- It is case sensitive
 -- All fields are mandetory to fill
 
 SELECT 

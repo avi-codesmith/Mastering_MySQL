@@ -27,10 +27,10 @@ SELECT * FROM cats WHERE age = 4; - READ ALL COLUMNS CONDIONALLY
 SELECT age,name FROM cats WHERE age = 4; -READ SPECIFIC COLUMNS CONDITIONALLY
 SELECT age FROM cats WHERE breed = '🗿'; -FIND VALUE IF KNOW ONE VALUE 
 SELECT * FROM cats WHERE name="eGg" -- READ INFORMATION ABOUT A SPECIFIC ROW, IN THIS THE CASE OF FIELD DOES'NT MATTER
--- WHERE fetch first then SELECT give data, So, SELECT is totally independent, If we know onevalue (name) then we can find othervalue (age) ...as I did in line no.28 
+-- WHERE fetch first then SELECT give data, So, SELECT is totally independent, If we know one value (name) then we can find othervalue (age) ...as I did in line no.28 
 
 /*Practise time*/
--- done in CML
+-- done in CLI
 
 /*ALIAS AS*/
 

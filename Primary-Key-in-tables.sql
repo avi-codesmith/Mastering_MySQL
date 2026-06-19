@@ -12,7 +12,7 @@ drop table uniqueCats;
 CREATE TABLE uniqueCats(cat_Id INT NOT NULL,
  name VARCHAR(20) NOT NULL DEFAULT 'NO-NAME',
  primary key(cat_Id)
- );
+);
 
 INSERT INTO uniqueCats(cat_Id, name) VALUES(3, "ROWANIS"),(5, "HONRSEWAGLE");
 DESC uniqueCats;
@@ -33,7 +33,7 @@ INSERT INTO uniqueCats(name) VALUES("Avioatroi");
 INSERT INTO uniqueCats(name) VALUES("Avioatroi");
 INSERT INTO uniqueCats(name) VALUES("Avioatroi");
 INSERT INTO uniqueCats(name) VALUES("Avioatroi");
-INSERT INTO uniqueCats( name) VALUES( "gaoiya");
+INSERT INTO uniqueCats(name) VALUES( "gaoiya");
 
 
 select * from uniqueCats;

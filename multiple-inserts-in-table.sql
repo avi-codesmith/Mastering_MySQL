@@ -8,7 +8,7 @@ insert into people(age, lastname, firstname) values(2, "harry", "singh");
 insert into people(firstname, lastname, age) values("Ben", "Cutting", 10);
 INSERT INTO people(firstname, lastname, age)
             values("Sam", "Vhorcho", 10), 
-				  ("Volta", "Squal", 20), 
+				          ("Volta", "Squal", 20), 
                   ("Mouch", "Vokka", 25);
 SELECT * FROM people;
 
@@ -30,7 +30,7 @@ INSERT INTO shop(age, name) VALUES(15, "moyota's shop");
 select * FROM shop;
 
 /*ADDING DEFAULT VALUES*/
-CREATE TABLE dominax(name VARCHAR(20), flavor VARCHAR(10));
+CREATE TABLE dominax(name VARCHAR(20) DEFAULT "UNNAMED", flavor VARCHAR(10));
 SHOW TABLES;
 
 /*DEFAULT VALUE WITH NOT NULL*/
