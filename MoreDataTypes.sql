@@ -63,4 +63,26 @@ INSERT INTO products(price) VALUES(11111122222222222222.11); -- error out of ran
  
 
 SELECT * FROM products;
+/*
+-- FLOAT AND DOUBLE
+- FLOAT: memory 4bytes, upto 7 digits
+- DOUBLE: memory 8bytes, upto 15 digits
+*/
 
+CREATE TABLE laptop(memory DOUBLE, rating FLOAT);
+
+INSERT INTO laptop(memory, rating) VALUES(395.34, 4.5); -- work fine:D
+INSERT INTO laptop(memory, rating) VALUES(345.455565567, 4.5555555);
+--                                        fine, will turncate roundoff (float have upto 7 digit allowed)
+INSERT INTO laptop(memory, rating) VALUES(345.45556556733333333, 4.5555555);
+--                                        both will turncate roundoff (float and double only habe 7 and 15 digits allowed)
+
+SELECT * FROM laptop;
+
+DESC laptop;
+
+# Rule of Thumb 🎯
+
+-- salary DECIMAL(10,2)   -- ₹50000.75
+-- pi DOUBLE              -- 3.141592653589793
+-- temperature FLOAT      -- 36.7
