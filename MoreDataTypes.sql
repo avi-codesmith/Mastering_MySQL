@@ -1,4 +1,6 @@
-/*CHAR AND VARCHAR*/
+/*COMPLEX DATA TYPES*/
+
+/*CHAR AND VARCHAR -----------------------------------------------------------------------------------------------------------------------*/
 
 CREATE TABLE employees_table (name VARCHAR(10));
 DESC employees_table;
@@ -31,7 +33,7 @@ Notes:
 - VARCHAR uses actual data length + 1 byte to store length information.
 */
 
-/*ALL ABOUT INT*/
+/*ALL ABOUT INT ---------------------------------------------------------------------------------------------------------------*/
 
 -- TINYINT 
 -- SMALLINT 
@@ -49,7 +51,7 @@ CREATE TABLE parents(children INT UNSIGNED); -- by default it is SIGNED with - a
 INSERT INTO parents(children) values(222); -- ok! :)
 INSERT INTO parents(children) values(-222); -- !ok +_-' error -_-'
 
-# DECIMALS
+# DECIMALS----------------------------------------------------------------------------------------------------------------------------------------------
 
 -- DECIMAL(5,2) upto 5 total digits, add point after two digit backwards
 
@@ -64,7 +66,7 @@ INSERT INTO products(price) VALUES(11111122222222222222.11); -- error out of ran
 
 SELECT * FROM products;
 /*
--- FLOAT AND DOUBLE
+-- FLOAT AND DOUBLE -----------------------------------------------------------------------------------------------------------------------------------------
 - FLOAT: memory 4bytes, upto 7 digits
 - DOUBLE: memory 8bytes, upto 15 digits
 */
@@ -86,3 +88,22 @@ DESC laptop;
 -- salary DECIMAL(10,2)   -- ₹50000.75
 -- pi DOUBLE              -- 3.141592653589793
 -- temperature FLOAT      -- 36.7
+
+/*DATE, TIME AND DATETIME at the same time ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+CREATE TABLE people(
+    name VARCHAR(100),
+    birthDate DATE,
+    birthTime TIME,
+    birthDT DATETIME
+);
+
+DESC people;
+
+INSERT INTO people(name, birthDate, birthTime, birthDT) 
+VALUES
+("Alborto", "1910-8-12", "12:20:02", "1910-12-12 13:09:59"), 
+("Milton", "1990-2-16", "23:20:0", "1990-2-16 23:20:0"),
+("Wraxen", "2000-10-12", "8:28:45", "2000-10-12 8:28:45");
+
+SELECT * FROM people;
