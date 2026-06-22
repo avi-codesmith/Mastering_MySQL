@@ -34,6 +34,6 @@ SELECT title, pages, released_year FROM books WHERE (released_year >= 1950 AND r
 -- BETWEEN OPERATOR 
 SELECT title, pages, released_year FROM books WHERE (released_year BETWEEN 1950 AND 2000) AND pages < 300;
 SELECT title, pages FROM books WHERE pages BETWEEN 208 AND 300;
--- NOT BETWEEN OPERATOR 
+-- NOT BETWEEN OPERATOR
 SELECT title, pages FROM books WHERE pages NOT BETWEEN 300 AND 465;
 
