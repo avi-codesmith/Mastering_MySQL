@@ -6,4 +6,4 @@ DATE AND TIME related concepts
 Result:
 Scored 90% + in practice quiz.
 
-![alt text](image.png)
+![Date and time practice result](date-time-practise.png)
