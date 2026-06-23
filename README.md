@@ -7,37 +7,6 @@ Welcome to **Mastering MySQL** — a learning repository for building strong dat
 
 ## Introduction 👋
 
-This repo is focused on understanding MySQL from the basics to more practical, real-world usage. It can include notes, SQL queries, examples, exercises, mini-projects, and interview preparation material.
-
-## What You Can Add 📚
-
-- MySQL basics and commands
-- Database and table creation examples
-- SQL queries for practice
-- Joins, keys, indexes, and constraints
-- Stored procedures, views, and triggers
-- Practice questions and solutions
-- Mini projects using MySQL
-
-## Topics To Cover ✅
-
-- SELECT, INSERT, UPDATE, DELETE
-- WHERE, ORDER BY, GROUP BY, HAVING
-- Primary keys and foreign keys
-- INNER JOIN, LEFT JOIN, RIGHT JOIN
-- Aggregate functions
-- Subqueries
-- Normalization
-- Indexing and performance basics
-
-## Goal 🎯
-
-The goal of this repository is to make MySQL easier to learn, revise, and practice in one place.
-
-## Keep Learning 💡
-
-Practice daily, write queries yourself, and keep improving your database skills.
-
----
+This repo is focused on understanding MySQL from the basics to more practical, real-world usage. It can include notes, SQL queries, examples, exercises, projects, and interview preparation material.
 
 Made with focus and curiosity ✨
