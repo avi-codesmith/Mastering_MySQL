@@ -27,7 +27,8 @@ SELECT * FROM partiers;
 
 CREATE TABLE palindromes(
    id INT PRIMARY KEY AUTO_INCREMENT,
-   word VARCHAR(100) CHECK(REVERSE(word) = word)
+   word VARCHAR(100) CHECK(REVERSE(word) = word) 
+   -- if it violated then it is named as palindromes_chk_1, you will named constraints from line 41
 );
 
 INSERT INTO palindromes(word) VALUES("war=raw"); -- it is a palindrome ADDED INTO TABLE :)
@@ -36,6 +37,20 @@ INSERT INTO palindromes(word) VALUES("WCW"); -- it is a palindrome ADDED INTO TA
 
 
 SELECT * FROM palindromes;
+
+/*NAMED CONSTRAINTS*/
+
+CREATE TABLE `rubik's cube` (
+  name VARCHAR(100),
+  age INT,
+  CONSTRAINT min_toy_age CHECK (age > 3)
+  -- violated and named as  min_toy_age (as we given)
+  -- improoves readability
+);
+
+INSERT INTO `rubik's cube`(name, age) VALUES("BrownRowan", 3) -- age ain't > 3
+
+
 
 
 
