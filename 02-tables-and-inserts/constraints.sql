@@ -45,12 +45,31 @@ CREATE TABLE `rubik's cube` (
   age INT,
   CONSTRAINT min_toy_age CHECK (age > 3)
   -- violated and named as  min_toy_age (as we given)
-  -- improoves readability
 );
 
-INSERT INTO `rubik's cube`(name, age) VALUES("BrownRowan", 3) -- age ain't > 3
+INSERT INTO `rubik's cube`(name, age) VALUES("BrownRowan", 3); -- age ain't > 3 !no rubik's cube
 
+-- IMPORTANT USECASES!!!!!!
 
+CREATE TABLE users(
+ name VARCHAR(100) NOT NULL,
+ address VARCHAR(100) NOT NULL,
+ CONSTRAINT authentication UNIQUE (name, address)
+);
+
+INSERT INTO users(name, address) VALUES("Rornfob", "103, heaven apartment");
+
+CREATE TABLE houses(
+  costprice INT NOT NULL,
+  sellprice INT NOT NULL,
+  CONSTRAINT profit CHECK (sellprice >= costprice)
+);
+
+INSERT INTO houses(costprice, sellprice) VALUES(1000, 1999);
+-- PERFECT DEAL
+
+INSERT INTO houses(costprice, sellprice) VALUES(1000, 999);
+-- DEAD DEAL -1 :( -- error for "profit" ...line_no.65
 
 
 
