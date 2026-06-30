@@ -115,6 +115,28 @@ SELECT emp_no, department, salary,
 NTILE(3) OVER(PARTITION BY department ORDER BY salary DESC) AS quartile
 FROM employees; -- 3 no. of tile.
 
-/*FIRST_VALUE() ---------------------------------------------------------------------------------------------------------------------*/
+/*FIRST_VALUE(expr) ----------------------------------------------------------------------------------------------------------------------------*/
+-- Returns the value of <expr> from the first row after applying ORDER BY.
+-- Who is first retrun it <expr> - name, id etc.
+SELECT emp_no, department, salary, FIRST_VALUE(emp_no) OVER(ORDER BY salary DESC) 
+FROM employees; -- the emp_no is 10 who is first, output like: 
+-- 10, 10, 10... 
+SELECT emp_no, department, salary, FIRST_VALUE(emp_no) OVER(PARTITION BY department ORDER BY salary DESC) 
+FROM employees; -- in different departments
 
+/*LEAD(expr) and LAG(expr)-----------------------------------------------------------------------------------------------*/
+
+-- LAG(expr) - return the previous <expr>
+SELECT emp_no, department, salary,
+salary - LAG(salary) OVER(ORDER BY salary) AS salary
+FROM employees; -- we could check the jump by (-ing) salary 
+
+-- LEAD(expr) - return the next <expr>
+SELECT emp_no, department, salary,
+LEAD(salary) OVER(PARTITION BY department ORDER BY salary) AS salary
+FROM employees; -- divide by department!
+
+SELECT emp_no, department, salary,
+LEAD(salary, 2) OVER(PARTITION BY department ORDER BY salary) AS salary
+FROM employees; -- we can add 2nd argument stands for how much row previos or next
 
