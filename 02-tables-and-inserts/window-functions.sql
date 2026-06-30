@@ -75,5 +75,46 @@ FROM employees;
 SELECT order_date,
        amount,
        SUM(amount) OVER (ORDER BY order_date) AS running_total
-FROM orders
+FROM orders;
+
+/*RANK() --------------------------------------------------------------------------------------------------------------------------------*/
+-- return rank- 1,2,3... rows according to ORDER BY [ASC|DESC]
+-- It is not always consecutive, we could have ties,
+-- Also it skip some rows when have ties, Like: 1, 2, 2, 4 - not consec. + skips
+SELECT emp_no, department, salary,
+ RANK() OVER(PARTITION BY department ORDER BY salary DESC)
+  AS within_department,
+ RANK() OVER(ORDER BY salary DESC)
+  AS overall
+FROM employees ORDER BY department;
+
+/*ROW_NUMBER ----------------------------------------------------------------------------------------------------------------------------*/
+-- It just return the row number with a new column and many rows
+-- If there is tie, it doesn't matter
+-- Always consecutive, bcz It ain't rank its just row number 
+-- Like: 1, 2, 3, 4 - consec. + no skip
+SELECT
+    emp_no,
+    department,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS `row's_number`
+FROM employees;
+
+/*DENSE_RANK() --------------------------------------------------------------------------------------------------------------------------------*/
+-- return rank- 1,2,3... rows according to ORDER BY [ASC|DESC]
+-- It is not always consecutive, we could have ties,
+-- It never skip rows when have ties. Like 1, 2, 2, 3, 4 - neither consec. nor skip
+-- Best for school's topper's rank
+SELECT emp_no, department, salary, DENSE_RANK() OVER(ORDER BY salary DESC) AS Ranks
+FROM employees;
+
+/*NTILE(n) ------------------------------------------------------------------------------------------------------------------------------------*/ 
+-- NTILE - number of tile! and n = how many number of tile?  
+-- make 'n' titles or chambers according to ORDER BY [ASC|DESC]
+SELECT emp_no, department, salary, 
+NTILE(3) OVER(PARTITION BY department ORDER BY salary DESC) AS quartile
+FROM employees; -- 3 no. of tile.
+
+/*FIRST_VALUE() ---------------------------------------------------------------------------------------------------------------------*/
+
 
